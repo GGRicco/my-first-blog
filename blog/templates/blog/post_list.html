@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GGRicco's blog</title>
 </head>
+
 <body>
     <div>
         <h1><a href="#">Django GGRicco's blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-        <p>published: 06.12.2020, 03:22</p>
-        <h2><a href="#">My first post</a></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ratione labore, accusantium sapiente sint natus.</p>
+        <p>published: {{ post.published_date}}</p>
+        <h2><a href="#">{{post.title}}</a></h2>
+        <p>{{post.text|linebreaksbr}}</p>
     </div>
+    {% endfor %}
 
     <div>
         <p>published: 06.12.2020, 03:22</p>
         <h2><a href="#">My second post</a></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ratione labore, accusantium sapiente sint natus.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ratione labore, accusantium sapiente sint
+            natus.</p>
     </div>
 </body>
+
 </html>
